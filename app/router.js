@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('home', function() {
     this.route('post');
     this.route('edit', { path: ':id'});
+    this.route('user');
   });
   this.route('about');
   this.route('profile', { path: ':id'});

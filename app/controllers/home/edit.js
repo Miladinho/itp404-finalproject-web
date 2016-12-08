@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'fraiche/config/environment'
 
 export default Ember.Controller.extend({
   actions: {
@@ -6,7 +7,7 @@ export default Ember.Controller.extend({
       console.log(post)
       var promise = $.ajax({
         type: "put",
-        url: "http://localhost:3000/api/1/posts/"+post.id,
+        url: "http://fraiche-server.herokuapp.com/api/1/posts/"+post.id,
         data: {
           userid: post.id,
           title: post.title,
@@ -20,7 +21,7 @@ export default Ember.Controller.extend({
     deletePost: function(post) {
       var promise = $.ajax({
         type: "delete",
-        url: "http://localhost:3000/api/1/posts/"+post.id
+        url: "http://fraiche-server.herokuapp.com/api/1/posts/"+post.id
       }).then((post) => {
         alert("Succesfully deleted post!")
         this.transitionToRoute('home')

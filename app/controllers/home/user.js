@@ -1,34 +1,27 @@
 import Ember from 'ember';
-import ENV from 'fraiche/config/environment'
 
 export default Ember.Controller.extend({
   actions : {
-    createPost: function(e) {
+    createUser: function(e) {
       e.preventDefault();
       var postUser = this.get("user");
-      var postTitle = this.get("title");
-      var postDescription = this.get("description");
+      var postName = this.get("name");
+      var postEmail = this.get("email");
       var promise = $.ajax({
         type: "post",
-        url: "http://fraiche-server.herokuapp.com/api/1/posts",
+        url: "http://fraiche-server.herokuapp.com/api/1/user/create/fb",
         data: {
           userid: postUser,
-          title: postTitle,
-          description: postDescription
+          title: postName,
+          description: postEmail
         }
       })
       promise.then((result) => {
-        //console.log(result);
+        console.log(result);
         //console.log(this.get('model'));
-        // if (result.userid == this.get('user')) {
-        //   var posts = this.get('model');
-        //   posts.pushObject(result);
-        //   this.set('model',posts)
-        // }
         this.set('user',null);
-        this.set('title',null);
-        this.set("description",null);
-        alert("Succesfully created post!")
+        this.set('name',null);
+        this.set("email",null);
         this.transitionToRoute('home');
       })
     },

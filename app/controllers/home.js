@@ -1,5 +1,7 @@
 import Ember from 'ember';
+import ENV from 'fraiche/config/environment'
 
+console.log(ENV)
 export default Ember.Controller.extend({
   actions : {
     getUserPosts: function(e) {
@@ -8,7 +10,7 @@ export default Ember.Controller.extend({
       var postUser = this.get("user");
       var promise = $.ajax({
         type: "get",
-        url: "http://localhost:3000/api/1/posts/users/"+postUser
+        url: "http://fraiche-server.herokuapp.com/api/1/posts/users/"+postUser
       }).then((result) => {
         this.set('model',result);
         this.transitionToRoute('home');

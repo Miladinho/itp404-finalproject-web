@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import ENV from 'fraiche/config/environment'
 
 export default Ember.Route.extend({
   model: function(params) {
     var userID = params.id
-    var url = 'http://ec2-35-163-70-242.us-west-2.compute.amazonaws.com/api/1/users/' + userID;
+    var url = "http://fraiche-server.herokuapp.com/api/1/users/" + userID;
 
     var promise = $.ajax({
       type: 'get',

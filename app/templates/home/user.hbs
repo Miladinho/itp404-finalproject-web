@@ -1,0 +1,24 @@
+{{outlet}}
+
+<div class="page-header">
+  <h2>Create User</h2>
+</div>
+<div class="col-md-6">
+    <form>
+      <div class="row">
+        <label class="col-md-3"for="new-user">User #</label>
+        {{input class="col-md-9" type="text" value=user id="new-user" required="true"}}
+      </div>
+      <div class="row">
+        <label class="col-md-3" for="new-user-name">Full Name</label>
+        {{input class="col-md-9" type="text" value=name id="new-user-name" required="true"}}
+      </div>
+      <div class="row">
+        <label class="col-md-3" for="new-user-email">Email</label>
+        {{textarea class="col-md-9" type="text" cols="50" rows="4" value=email id="new-user-email" required="true"}}
+      </div>
+    </form>
+    <br>
+    <button class="col-md-3" value="Submit" onClick={{action "createUser"}}>Post</button>
+    <button class="col-md-3" value="cancel" onClick={{action "cancelPost"}}>Cancel</button>
+</div>

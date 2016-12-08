@@ -1,8 +1,8 @@
 {{outlet}}
 
-<h1>Welcome to {{model.fullname}}'s Profile!</h1>
+<h1>Welcome to {{model.[0].fullname}}'s Profile!</h1>
 
-<h5>You can contact {{model.fullname}} at the email address below.</h5>
+<h5>You can contact {{model.[0].fullname}} at the email address below.</h5>
 <div >
-  {{model.email}}
+  {{model.[0].email}}
 </div>
