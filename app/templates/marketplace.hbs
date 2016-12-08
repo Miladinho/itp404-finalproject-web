@@ -1,0 +1,31 @@
+{{outlet}}
+
+<div class="page-header">
+  <h2>Community Posts</h2>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |post|}}
+          <tr>
+            <td>{{post.title}}</td>
+
+            <td>{{post.description}}</td>
+            {{#link-to 'profile' post.userid}}
+            <td>link</td>
+            {{/link-to}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+</div>

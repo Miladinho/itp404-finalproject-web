@@ -1,0 +1,25 @@
+
+
+<div class="page-header">
+  <h2>Edit Post #{{model.id}}</h2>
+</div>
+<div class="col-md-6">
+    <form>
+      <div class="row">
+        <label class="col-md-3"for="new-post-user">User #</label>
+        {{input class="col-md-9" type="text" value=user value=model.userid id="new-post-user" required="true"}}
+      </div>
+      <div class="row">
+        <label class="col-md-3" for="new-post-title">Title</label>
+        {{input class="col-md-9" type="text" value=title value=model.title id="new-post-title" required="true"}}
+      </div>
+      <div class="row">
+        <label class="col-md-3" for="new-post-description">Description</label>
+        {{textarea class="col-md-9" type="text" cols="50" rows="4" value=description value=model.description id="new-post-description" required="true"}}
+      </div>
+    </form>
+    <br>
+    <button class="col-md-3" value="Confirm" onClick={{action "editPost" model}}>Post</button>
+    <button class="col-md-3" value="Cancel" onClick={{action "cancelEdit"}}>Cancel</button>
+    <button class="col-md-3" value="Delete" onClick={{action "deletePost" model}}>Delete</button>
+</div>
