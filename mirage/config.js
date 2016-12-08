@@ -13,7 +13,7 @@ export default function() {
   // this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   this.get('/posts', function(schema) {
-    var posts = schema.posts.all();
+    var posts = schema.db.posts;
     return posts;
   });
 

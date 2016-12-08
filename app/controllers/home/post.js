@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from 'fraiche/config/environment'
+//import ENV from 'fraiche/config/environment'
 
 export default Ember.Controller.extend({
   actions : {
@@ -16,9 +16,9 @@ export default Ember.Controller.extend({
           title: postTitle,
           description: postDescription
         }
-      })
+      });
       promise.then((result) => {
-        //console.log(result);
+        console.log(result);
         //console.log(this.get('model'));
         // if (result.userid == this.get('user')) {
         //   var posts = this.get('model');
@@ -28,9 +28,9 @@ export default Ember.Controller.extend({
         this.set('user',null);
         this.set('title',null);
         this.set("description",null);
-        alert("Succesfully created post!")
+        alert("Succesfully created post!");
         this.transitionToRoute('home');
-      })
+      });
     },
     cancelPost: function() {
       var posts = this.get('model');

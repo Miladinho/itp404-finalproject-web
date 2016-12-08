@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
           title: postName,
           description: postEmail
         }
-      })
+      });
       promise.then((result) => {
         console.log(result);
         //console.log(this.get('model'));
@@ -23,11 +23,11 @@ export default Ember.Controller.extend({
         this.set('name',null);
         this.set("email",null);
         this.transitionToRoute('home');
-      })
+      });
     },
     cancelPost: function() {
-      var posts = this.get('model')
-      console.log(posts)
+      var posts = this.get('model');
+      console.log(posts);
       this.set('user',null);
       this.set('title',null);
       this.set("description",null);

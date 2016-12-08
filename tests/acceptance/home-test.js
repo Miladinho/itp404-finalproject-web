@@ -1,7 +1,11 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'fraiche/tests/helpers/module-for-acceptance';
 
-moduleForAcceptance('Acceptance | home');
+moduleForAcceptance('Acceptance | home', {
+  beforeEach(){
+    server.createList('posts', 20);
+  }
+});
 
 test('visiting / redirects to /home', function(assert) {
   visit('/');
@@ -11,14 +15,18 @@ test('visiting / redirects to /home', function(assert) {
   });
 });
 
-test('should list available posts',function(assert) {
+test(' home/marketplace should list available posts',function(assert) {
+  visit('/marketplace');
 
+  andThen(function() {
+    assert.equal(find('.post').length, 20);
+  });
 });
 
-test('should link to post owners profile route', function(assert) {
-
+test(' home/new should link to creat post route', function(assert) {
+  visit('home');
+  click('.createPost');
+  andThen(function() {
+    assert.equal(currentURL(),'/home/post');
+  });
 });
-
-test('should link to creat post route', function(assert) {
-
-})

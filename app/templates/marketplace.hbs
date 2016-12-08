@@ -15,11 +15,11 @@
       </thead>
       <tbody>
         {{#each model as |post|}}
-          <tr>
+          <tr class="post">
             <td>{{post.title}}</td>
 
             <td>{{post.description}}</td>
-            {{#link-to 'profile' post.userid}}
+            {{#link-to 'profile' post.userid class="profile"}}
             <td>link</td>
             {{/link-to}}
           </tr>

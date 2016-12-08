@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from 'fraiche/config/environment'
+import ENV from 'fraiche/config/environment';
 
 export default Ember.Route.extend({
   model: function() {
@@ -7,7 +7,7 @@ export default Ember.Route.extend({
       type: 'get',
       url: "http://fraiche-server.herokuapp.com/api/1/posts"
     })
-    console.log(promise)
+    //console.log(promise);
     return promise;
   }
 });

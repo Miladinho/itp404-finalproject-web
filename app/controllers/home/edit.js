@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from 'fraiche/config/environment'
+//import ENV from 'fraiche/config/environment'
 
 export default Ember.Controller.extend({
   actions: {
