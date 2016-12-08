@@ -4,8 +4,7 @@ import ENV from 'fraiche/config/environment'
 export default Ember.Controller.extend({
   actions: {
     editPost: function(post) {
-      console.log(post)
-      var promise = $.ajax({
+      var promise = Ember.$.ajax({
         type: "put",
         url: "http://fraiche-server.herokuapp.com/api/1/posts/"+post.id,
         data: {
@@ -14,17 +13,17 @@ export default Ember.Controller.extend({
           description: post.description
         }
       }).then((post) => {
-        alert("Succesfully edited post!")
-        this.transitionToRoute('home')
+        alert("Succesfully edited post!");
+        this.transitionToRoute('home');
       })
     },
     deletePost: function(post) {
-      var promise = $.ajax({
+      var promise = Ember.$.ajax({
         type: "delete",
         url: "http://fraiche-server.herokuapp.com/api/1/posts/"+post.id
       }).then((post) => {
-        alert("Succesfully deleted post!")
-        this.transitionToRoute('home')
+        alert("Succesfully deleted post!");
+        this.transitionToRoute('home');
       })
       return promise;
     },

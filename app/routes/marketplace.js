@@ -3,7 +3,7 @@ import ENV from 'fraiche/config/environment'
 
 export default Ember.Route.extend({
   model: function() {
-    var promise = $.ajax({
+    var promise = Ember.$.ajax({
       type: 'get',
       url: "http://fraiche-server.herokuapp.com/api/1/posts"
     })

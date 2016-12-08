@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       var postUser = this.get("user");
       var postName = this.get("name");
       var postEmail = this.get("email");
-      var promise = $.ajax({
+      var promise = Ember.$.ajax({
         type: "post",
         url: "http://fraiche-server.herokuapp.com/api/1/user/create/fb",
         data: {

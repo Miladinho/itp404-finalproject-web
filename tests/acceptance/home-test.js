@@ -3,8 +3,8 @@ import moduleForAcceptance from 'fraiche/tests/helpers/module-for-acceptance';
 
 moduleForAcceptance('Acceptance | home');
 
-test('visiting /home', function(assert) {
-  visit('/home');
+test('visiting / redirects to /home', function(assert) {
+  visit('/');
 
   andThen(function() {
     assert.equal(currentURL(), '/home');

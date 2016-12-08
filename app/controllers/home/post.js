@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
       var postUser = this.get("user");
       var postTitle = this.get("title");
       var postDescription = this.get("description");
-      var promise = $.ajax({
+      var promise = Ember.$.ajax({
         type: "post",
         url: "http://fraiche-server.herokuapp.com/api/1/posts",
         data: {
@@ -33,8 +33,8 @@ export default Ember.Controller.extend({
       })
     },
     cancelPost: function() {
-      var posts = this.get('model')
-      console.log(posts)
+      var posts = this.get('model');
+      console.log(posts);
       this.set('user',null);
       this.set('title',null);
       this.set("description",null);
